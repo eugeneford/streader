@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/eugeneford/collit/master/.github/streader-logo.png" width="100" height="100">
+  <img src="https://raw.githubusercontent.com/eugeneford/streader/master/.github/streader-logo.png" width="100" height="100">
 </p>
 
 <h3 align="center">
