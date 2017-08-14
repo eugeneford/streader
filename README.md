@@ -23,14 +23,14 @@
 </p>
 
 ## Basic Overview
-Streader is a String Reader for a convenient way to read through strings.
-
-> Our mission is to create a simple, fast and well-documented String Reader which will fit any kind of your projects based on string operations.
+Streader is a String Reader which simplifies the way we read through strings.
 
 Library can be used both in Node.js and directly in Browser.
 It is well-documented and completely covered with test specs (excluding webpack bundling definitions and expressions).
 
 If you want to add some features or to suggest any idea, feel free ? [contributions are always welcome](#contributing-to-streader).
+
+
 
 ## Contributing to Streader
 Contributions are always welcome.
