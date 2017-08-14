@@ -30,7 +30,46 @@ It is well-documented and completely covered with test specs (excluding webpack 
 
 If you want to add some features or to suggest any idea, feel free ? [contributions are always welcome](#contributing-to-streader).
 
+## How to Install
+#### Using NPM
+To use Streader with NPM simply call:
+```js
+npm install --save streader
+```
 
+#### In Browser
+To use Streader directly in browser simply download this repository and copy dist/streader.js into your project.
+Next, include it on your .html page:
+```html
+<script src="path/to/your/js/streader.js"></script>
+```
+
+## Get Started
+You are able to use Streader as the importable npm package or directly in browser.
+
+#### In Node.js
+```js
+import Streader from "streader";
+
+var reader = new Streader("example");
+
+while( !reader.eof() ) {
+ var char = reader.read();
+ // Do something with each char
+}
+```
+
+#### In Browser
+```html
+<script>
+var reader = new Streader("example");
+
+while( !reader.eof() ) {
+ var char = reader.read();
+ // Do something with each char
+}
+</script>
+```
 
 ## Contributing to Streader
 Contributions are always welcome.
