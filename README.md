@@ -81,6 +81,116 @@ To contribute, follow next steps:
 * Commit your changes
 * Open a Pull Request.
 
+## API
+
+### read(count)
+Reads the next characters
+```js
+var reader = new Streader("Example");
+
+var chars = reader.read(7); // chars => "Example"
+``` 
+
+### peek(count, offset)
+Reads the next character without advancing the cursor
+```js
+var reader = new Streader("Example");
+
+var chars = reader.peek(3, 2); // chars => "amp"
+```
+
+### skip(count)
+Skips the next characters
+```js
+var reader = new Streader("Example");
+
+var skipped = reader.skip(3); // skipped => 3
+```
+
+### readPattern(pattern)
+Reads characters that match either string or regexp pattern.
+```js
+var reader = new Streader("Pattern Example");
+
+var chars = reader.readPattern("Pattern"); // chars => "Pattern"
+var index = reader.getIndex(); // index => 7
+
+var chars = reader.readPattern(/\s+/); // chars => " "
+var index = reader.getIndex(); // index => 8
+```
+
+
+### peekPattern(pattern, offset)
+Reads characters that match either string or regexp pattern without advancing the cursor.
+```js
+var reader = new Streader("Pattern Example");
+
+var chars = reader.peekPattern("Ex", 8); // chars => "Ex"
+var index = reader.getIndex(); // index => 0
+
+var chars = reader.peekPattern(/\w+/); // chars => "Pattern"
+var index = reader.getIndex(); // index => 0
+```
+
+### skipPattern(pattern)
+Skips characters that match either string or regexp.
+```js
+var reader = new Streader("Pattern Example");
+
+var skipped = reader.skipPattern("Pattern"); // skipped => 7
+
+var skipped = reader.skipPattern(/\s|\n/); // skipped => 1
+```
+
+### eof()
+Checks if we're at the end of the source
+```js
+var reader = new Streader("example");
+reader.read(100); // Read all characters
+
+var isEof = reader.eof(); // isEof => true
+```
+
+### reset()
+Resets current cursor position
+```js
+var reader = new Streader("example");
+reader.read(5); // Read 5 characters for example
+
+reader.reset();
+
+var index = reader.getIndex(); // index => 0
+```
+
+### getSource()
+Gets the current reader's source string.
+```js
+var reader = new Streader("example");
+
+var source = reader.getSource(); // source => "example"
+```
+
+### getIndex()
+Gets the current index of the cursor.
+```js
+var reader = new Streader("example");
+reader.read(5); // shift cursor for example
+
+var index = reader.getIndex(); // index => 5
+```
+
+### setSource(text)
+Loads the new text source to StringReader. Method resets current cursor data. Useful for deferred read.
+```js
+var reader = new Streader("old");
+reader.read(2); // shift cursor for example
+
+reader.setSource("new");
+
+var source = reader.getSource(); // source => "new"
+var index = reader.getIndex(); // index => 0
+```
+
 ### Feature Requests
 Feature requests should be submitted in the issue tracker, with a description
 of the expected behavior & use case, where they?ll remain closed until sufficient interest (e.g. ? reactions).

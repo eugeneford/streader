@@ -198,7 +198,7 @@ class StringReader {
   }
 
   /**
-   * Reset current cursor position
+   * Resets current cursor position
    */
   reset() {
     this._index = 0;
