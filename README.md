@@ -71,28 +71,17 @@ while( !reader.eof() ) {
 </script>
 ```
 
-## Contributing to Streader
-Contributions are always welcome.
-Before contributing please read the [code of conduct](https://js.foundation/community/code-of-conduct) &
-[search the issue tracker](https://github.com/eugeneford/streader/issues) (your issue may have already been discussed or fixed).
-
-To contribute, follow next steps:
-* Fork Streader
-* Commit your changes
-* Open a Pull Request.
-
 ## API
-
 ### read(count)
-Reads the next characters
+Reads the next characters. Count - optional count of characters to read
 ```js
 var reader = new Streader("Example");
 
 var chars = reader.read(7); // chars => "Example"
-``` 
+```
 
 ### peek(count, offset)
-Reads the next character without advancing the cursor
+Reads the next character without advancing the cursor. Count - optional count of characters to read; Offset - optional offset to start read at
 ```js
 var reader = new Streader("Example");
 
@@ -100,7 +89,7 @@ var chars = reader.peek(3, 2); // chars => "amp"
 ```
 
 ### skip(count)
-Skips the next characters
+Skips the next characters. Count - optional count of characters to read.
 ```js
 var reader = new Streader("Example");
 
@@ -118,7 +107,6 @@ var index = reader.getIndex(); // index => 7
 var chars = reader.readPattern(/\s+/); // chars => " "
 var index = reader.getIndex(); // index => 8
 ```
-
 
 ### peekPattern(pattern, offset)
 Reads characters that match either string or regexp pattern without advancing the cursor.
@@ -162,7 +150,7 @@ reader.reset();
 var index = reader.getIndex(); // index => 0
 ```
 
-### getSource()
+### getSource() 
 Gets the current reader's source string.
 ```js
 var reader = new Streader("example");
@@ -190,6 +178,16 @@ reader.setSource("new");
 var source = reader.getSource(); // source => "new"
 var index = reader.getIndex(); // index => 0
 ```
+
+## Contributing to Streader
+Contributions are always welcome.
+Before contributing please read the [code of conduct](https://js.foundation/community/code-of-conduct) &
+[search the issue tracker](https://github.com/eugeneford/streader/issues) (your issue may have already been discussed or fixed).
+
+To contribute, follow next steps:
+* Fork Streader
+* Commit your changes
+* Open a Pull Request.
 
 ### Feature Requests
 Feature requests should be submitted in the issue tracker, with a description
