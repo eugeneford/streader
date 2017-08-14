@@ -1,17 +1,17 @@
-describe("Strider", function () {
+describe("Streader", function () {
   var reader;
 
   beforeEach(function(){
-    reader = new Strider("Dummy Text");
+    reader = new Streader("Dummy Text");
   });
 
   describe("constructor(text)", function () {
     it("Threw a TypeError when text was not a string", function () {
-      expect(function(){new Strider(1)}).toThrowError(TypeError);
+      expect(function(){new Streader(1)}).toThrowError(TypeError);
     });
 
     it("Successfully created new StringReader instance", function(){
-      expect(new Strider() instanceof Strider).toBe(true);
+      expect(new Streader() instanceof Streader).toBe(true);
     })
   });
 

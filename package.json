@@ -1,11 +1,11 @@
 {
-  "name": "strider",
+  "name": "streader",
   "version": "1.0.0",
   "description": "A simple String Reader for a Convenient way to read through strings",
-  "main": "dist/strider.js",
+  "main": "dist/streader.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/eugeneford/strider.git"
+    "url": "https://github.com/eugeneford/streader.git"
   },
   "scripts": {
     "webpack": "webpack",

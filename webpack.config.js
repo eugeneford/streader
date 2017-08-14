@@ -1,11 +1,11 @@
 path = require("path");
 
 module.exports = {
-  entry: "./src/strider",
+  entry: "./src/streader",
   output: {
-    filename: "./dist/strider.js",
+    filename: "./dist/streader.js",
     libraryTarget: 'umd',
-    library: 'Strider',
+    library: 'Streader',
     auxiliaryComment: "istanbul ignore next"
   },
 

@@ -6,17 +6,17 @@ module.exports = function(config) {
       type: 'lcov', dir: 'coverage/'
     },
     files: [
-      'dist/strider.js',
+      'dist/streader.js',
       'test/*.js'
     ],
     preprocessors: {
-      'dist/strider.js': ['coverage']
+      'dist/streader.js': ['coverage']
     },
     reporters: ['progress', 'coverage', 'coveralls'],
     port: 9876,
     browsers: ['PhantomJS'],
-    // singleRun: true,
-    autoWatch: true,
+    singleRun: true,
+    // autoWatch: true,
     captureTimeout: 4 * 60 * 1000
   })
 };
