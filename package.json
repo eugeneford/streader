@@ -1,6 +1,6 @@
 {
   "name": "streader",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A simple String Reader for a Convenient way to read through strings",
   "main": "dist/streader.js",
   "repository": {
