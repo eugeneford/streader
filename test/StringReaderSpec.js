@@ -156,6 +156,12 @@ describe("Streader", function () {
     it("Threw a TypeError when pattern was not either string of regexp", function(){
       expect(function(){ reader.peekPattern(1) }).toThrowError(TypeError);
     });
+
+    it("Successfully peek a regex pattern while looking to the head of source string", function(){
+      reader.read(5);
+      expect(reader.peekPattern(/\w{2}/, -5)).toEqual("Du");
+      expect(reader.getIndex()).toEqual(5);
+    });
   });
 
   describe("skipPattern(pattern)", function(){

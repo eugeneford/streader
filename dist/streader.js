@@ -176,19 +176,19 @@ return /******/ (function(modules) { // webpackBootstrap
 	      // If we're at the end of the source
 	      if (this.eof()) return null;
 
-	      var sourceTrail = this._source.substring(this._index);
+	      var sourceTrail = this._source.substring(this._index + offset - 1);
 
 	      // Try to read a string pattern
 	      if (typeof pattern === "string") {
 	        for (var i = 0; i < pattern.length; i++) {
-	          if (pattern[i] !== sourceTrail[i + offset - 1]) return null;
+	          if (pattern[i] !== sourceTrail[i]) return null;
 	        }
 	        return this.peek(pattern.length, offset);
 	      }
 	      // Or, read a RegExp pattern
 	      else if (pattern instanceof RegExp) {
 	          if (!this._normalizeRegExp(pattern).test(sourceTrail)) return null;
-	          return this.peek(RegExp.lastMatch.length, offset);
+	          return RegExp.lastMatch;
 	        }
 	        // Otherwise, throw an Error
 	        else throw new TypeError("Pattern must be a String or RegExp");
@@ -320,7 +320,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 
 	    /**
-	     * Reset current cursor position
+	     * Resets current cursor position
 	     */
 
 	  }, {
